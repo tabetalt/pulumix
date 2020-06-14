@@ -4,9 +4,13 @@
   "description": "Toolset for OBF Apps",
   "license": "MIT",
   "version": "1.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
-    "generate-barrels": "node scripts/barrels.js",
+    "generate-barrels": "node scripts/barrels.js; prettier --write src/",
     "generate-docs": "typedoc --mode file --readme none --plugin typedoc-plugin-markdown --hideSources --out docs src",
     "postbuild": "yarn generate-docs"
   },
@@ -14,9 +18,9 @@
     "dist/*"
   ],
   "devDependencies": {
+    "prettier": "^2.0.5",
     "typedoc": "^0.17.3",
     "typedoc-plugin-markdown": "^2.2.16",
-    "barrelsby": "^2.2.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
