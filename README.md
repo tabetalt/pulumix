@@ -2,6 +2,8 @@
 [![code style: airbnb](https://img.shields.io/badge/eslint-airbnb-ff5a5f.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@tabetalt/pulumix?style=flat-square)
+![npm](https://img.shields.io/npm/v/@tabetalt/pulumix?style=flat-square)
 
 # Tabetalt Pulumix
 
