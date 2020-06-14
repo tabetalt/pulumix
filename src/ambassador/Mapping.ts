@@ -46,7 +46,7 @@ export class Mapping extends k8s.apiextensions.CustomResource {
       bypassAuth = false,
       grpc = false,
       cors,
-      namespace,
+      namespace = 'default',
       host,
     } = args;
     super(
