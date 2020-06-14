@@ -1,0 +1,6 @@
+/bin/
+/node_modules/
+/archive
+/dist
+/temp/
+.DS_Store
