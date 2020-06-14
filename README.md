@@ -12,7 +12,7 @@ Pulumix is a set of template-driven [Pulumi](https://pulumi.com) [resources](src
 
 ## Disclaimer
 
-Pulumix is opinionated and will change based on the needs of Tabetalt. However, as an Open Source project, you can contribute by adding Pull Requests or add issues. We intend to keep this library non-specific to our deployment, so it will stay useable by anyone who wants to. We do follow Semantic Release, so you should not get any surprises. We value stability 👍
+Pulumix is opinionated and will change based on the needs of Tabetalt. However, as an Open Source project, you can contribute by adding Pull Requests or add issues. We intend to keep this library non-specific to our deployment, so it will stay useable by anyone who wants to. We do follow Semantic Versioning, so you should not get any surprises. We value stability 👍
 
 ## Quickstart
 
