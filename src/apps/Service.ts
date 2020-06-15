@@ -1,6 +1,7 @@
 import * as pulumi from '@pulumi/pulumi';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
+import { CustomResourceOptionsWithConfig, Config } from '../helpers/Config';
 
 export interface ServiceSpec {
   /**
@@ -60,7 +61,7 @@ export interface ServiceSpec {
  */
 export class Service extends pulumi.ComponentResource {
   private readonly name: string;
-  private readonly opts?: pulumi.CustomResourceOptions;
+  private readonly opts?: CustomResourceOptionsWithConfig;
 
   private readonly deployment: kx.Deployment;
   private readonly service: kx.Service;
@@ -69,25 +70,21 @@ export class Service extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: ServiceSpec,
-    opts?: pulumi.CustomResourceOptions
+    opts?: CustomResourceOptionsWithConfig
   ) {
     super('apps:service', name, opts);
 
-    const config = new pulumi.Config();
+    const config = opts?.config || new Config();
 
-    const coreDomain = config.get('coreDomain') || process.env.CORE_DOMAIN;
-
-    if (!coreDomain) {
-      throw new Error(
-        'Please set coreDomain by either defining it as a environment variable or Pulumi config'
-      );
-    }
+    const primaryDomain = config
+      .get('primaryDomain')
+      .apply((domain) => domain || process.env.PRIMARY_DOMAIN);
 
     const {
       port = 8080,
       version = process.env.VERSION || 'dev',
-      domain = `${name}.${version}.${coreDomain}`,
-      env,
+      domain = primaryDomain.apply((domain) => `${name}.${domain}`),
+      env = {},
       image,
       mapping = {
         serviceName: `${name}-service`,
@@ -96,6 +93,8 @@ export class Service extends pulumi.ComponentResource {
         servicePort: port,
       },
     } = args;
+
+    env.APP_VERSION = version;
 
     const pb = new kx.PodBuilder({
       containers: [
@@ -108,6 +107,11 @@ export class Service extends pulumi.ComponentResource {
     });
 
     this.deployment = new kx.Deployment(`${name}-deployment`, {
+      metadata: {
+        annotations: {
+          'app-version': version,
+        },
+      },
       spec: pb.asDeploymentSpec(),
     });
 
