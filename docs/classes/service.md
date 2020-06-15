@@ -53,7 +53,7 @@ const service = new pulumix.apps.Service('account', {
 
 ###  constructor
 
-\+ **new Service**(`name`: string, `args`: [ServiceSpec](../interfaces/servicespec.md), `opts?`: pulumi.CustomResourceOptions): *[Service](service.md)*
+\+ **new Service**(`name`: string, `args`: [ServiceSpec](../interfaces/servicespec.md), `opts?`: [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)): *[Service](service.md)*
 
 *Overrides void*
 
@@ -63,7 +63,7 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 `args` | [ServiceSpec](../interfaces/servicespec.md) |
-`opts?` | pulumi.CustomResourceOptions |
+`opts?` | [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md) |
 
 **Returns:** *[Service](service.md)*
 
@@ -89,7 +89,7 @@ ___
 
 ### `Private` `Optional` `Readonly` opts
 
-• **opts**? : *pulumi.CustomResourceOptions*
+• **opts**? : *[CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)*
 
 ___
 
