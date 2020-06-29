@@ -20,6 +20,7 @@
 * [host](mappingspec.md#host)
 * [namespace](mappingspec.md#optional-namespace)
 * [opts](mappingspec.md#optional-opts)
+* [prefix](mappingspec.md#optional-prefix)
 * [serviceName](mappingspec.md#servicename)
 * [servicePort](mappingspec.md#optional-serviceport)
 
@@ -66,6 +67,14 @@ ___
 ### `Optional` opts
 
 • **opts**? : *pulumi.ComponentResourceOptions*
+
+___
+
+### `Optional` prefix
+
+• **prefix**? : *pulumi.Input‹string›*
+
+Prefix
 
 ___
 

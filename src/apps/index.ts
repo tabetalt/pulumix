@@ -1,5 +1,2 @@
-import { Service } from './Service';
-
-export default {
-  Service,
-};
+export * from './DockerService';
+export * from './Service';

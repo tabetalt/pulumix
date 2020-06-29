@@ -1,7 +1,9 @@
 import * as pulumi from '@pulumi/pulumi';
+import * as semver from 'semver';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
-import { CustomResourceOptionsWithConfig, Config } from '../helpers/Config';
+import { CustomResourceOptionsWithConfig } from '../helpers/ResourceOptions';
+import { Config } from '../helpers/Config';
 
 export interface ServiceSpec {
   /**
@@ -63,9 +65,9 @@ export class Service extends pulumi.ComponentResource {
   private readonly name: string;
   private readonly opts?: CustomResourceOptionsWithConfig;
 
-  private readonly deployment: kx.Deployment;
-  private readonly service: kx.Service;
-  private readonly mapping: Mapping;
+  readonly deployment: kx.Deployment;
+  readonly service: kx.Service;
+  readonly mapping: Mapping;
 
   constructor(
     name: string,
@@ -91,6 +93,7 @@ export class Service extends pulumi.ComponentResource {
         host: domain,
         bypassAuth: false,
         servicePort: port,
+        prefix: pulumi.output(version).apply((ver) => `v${semver.major(ver)}`),
       },
     } = args;
 

@@ -1,19 +1,15 @@
-[@tabetalt/pulumix](../README.md) › [Service](service.md)
+[@tabetalt/pulumix](../README.md) › [DockerService](dockerservice.md)
 
-# Class: Service ‹**TData**›
+# Class: DockerService ‹**TData**›
 
-Apps.Service
-
-Generic service consisting of best practise deployment, service and Ambassador Mapping.
+Creates a Docker-based service
 
 **`example`** 
 ```typescript
 import * as pulumix from '@tabetalt/pulumix';
-
-const service = new pulumix.apps.Service('account', {
- image: 'busybox',
- domain: 'busy.example.com',
-});
+const dockerService = new pulumix.apps.DockerService('service', {
+ build: '../backend'
+})
 ```
 
 ## Type parameters
@@ -24,36 +20,35 @@ const service = new pulumix.apps.Service('account', {
 
 * ComponentResource
 
-  ↳ **Service**
+  ↳ **DockerService**
 
 ## Index
 
 ### Constructors
 
-* [constructor](service.md#constructor)
+* [constructor](dockerservice.md#constructor)
 
 ### Properties
 
-* [deployment](service.md#readonly-deployment)
-* [mapping](service.md#readonly-mapping)
-* [name](service.md#private-readonly-name)
-* [opts](service.md#private-optional-readonly-opts)
-* [service](service.md#readonly-service)
-* [urn](service.md#readonly-urn)
+* [image](dockerservice.md#readonly-image)
+* [name](dockerservice.md#private-readonly-name)
+* [opts](dockerservice.md#private-optional-readonly-opts)
+* [service](dockerservice.md#readonly-service)
+* [urn](dockerservice.md#readonly-urn)
 
 ### Methods
 
-* [getData](service.md#protected-getdata)
-* [getProvider](service.md#getprovider)
-* [initialize](service.md#protected-initialize)
-* [registerOutputs](service.md#protected-registeroutputs)
-* [isInstance](service.md#static-isinstance)
+* [getData](dockerservice.md#protected-getdata)
+* [getProvider](dockerservice.md#getprovider)
+* [initialize](dockerservice.md#protected-initialize)
+* [registerOutputs](dockerservice.md#protected-registeroutputs)
+* [isInstance](dockerservice.md#static-isinstance)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Service**(`name`: string, `args`: [ServiceSpec](../interfaces/servicespec.md), `opts?`: [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)): *[Service](service.md)*
+\+ **new DockerService**(`name`: string, `args`: [DockerServiceSpec](../interfaces/dockerservicespec.md), `opts?`: [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)): *[DockerService](dockerservice.md)*
 
 *Overrides void*
 
@@ -62,22 +57,16 @@ const service = new pulumix.apps.Service('account', {
 Name | Type |
 ------ | ------ |
 `name` | string |
-`args` | [ServiceSpec](../interfaces/servicespec.md) |
+`args` | [DockerServiceSpec](../interfaces/dockerservicespec.md) |
 `opts?` | [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md) |
 
-**Returns:** *[Service](service.md)*
+**Returns:** *[DockerService](dockerservice.md)*
 
 ## Properties
 
-### `Readonly` deployment
+### `Readonly` image
 
-• **deployment**: *Deployment*
-
-___
-
-### `Readonly` mapping
-
-• **mapping**: *[Mapping](mapping.md)*
+• **image**: *Image*
 
 ___
 
@@ -95,7 +84,7 @@ ___
 
 ### `Readonly` service
 
-• **service**: *Service*
+• **service**: *[Service](service.md)*
 
 ___
 

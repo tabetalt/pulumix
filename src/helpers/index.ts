@@ -1,5 +1,3 @@
-import { Config } from './Config';
-
-export default {
-  Config,
-};
+export * from './Config';
+export * from './ResourceOptions';
+export * from './getVersion';
