@@ -3,6 +3,28 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 
+const processImports = (relativePath, directories, files) => {
+  let imports = files.map((file) => {
+    const name = path.parse(file).name;
+    return `export * from './${name}';`;
+  });
+
+  if (directories.length > 0) {
+    imports = imports.concat(
+      directories.map((directory) => {
+        return `import * as ${directory} from './${directory}';`;
+      })
+    );
+    imports.push('\nexport {');
+    imports = imports.concat(
+      directories.map((impo) => `${path.parse(impo).name},`)
+    );
+    imports.push('};');
+  }
+  
+  return imports.join('\n');
+};
+
 const processDirectory = (parent) => (dir) => {
   dir = path.resolve(__dirname, '..', 'src', parent, dir);
 
@@ -19,23 +41,10 @@ const processDirectory = (parent) => (dir) => {
       fs.lstatSync(`${dir}/${directory}`).isDirectory()
     );
 
-    let imports = files.map((file) => {
-      const name = path.parse(file).name;
-      return `import { ${name} } from './${name}';`;
-    });
-
-    imports = imports.concat(
-      directories.map((directory) => {
-        return `import ${directory} from './${directory}';`;
-      })
+    fs.writeFileSync(
+      `${dir}/index.ts`,
+      processImports(dir, directories, files)
     );
-
-    imports.push('\nexport default {');
-    imports = imports.concat(
-      files.concat(directories).map((impo) => `${path.parse(impo).name},`)
-    );
-    imports.push('};');
-    fs.writeFileSync(`${dir}/index.ts`, imports.join('\n'));
   } catch (e) {
     console.error(e);
   }
@@ -51,22 +60,15 @@ const processDirectory = (parent) => (dir) => {
       fs.lstatSync(`${dir}/${directory}`).isDirectory()
     );
 
-    let imports = files.map((file) => {
-      const name = path.parse(file).name;
-      return `import { ${name} } from './${name}';`;
-    });
+    // imports.push('\nexport {');
+    // imports = imports.concat(
+    //   files.concat(directories).map((impo) => `${path.parse(impo).name},`)
+    // );
+    // imports.push('};');
 
-    imports = imports.concat(
-      directories.map((directory) => {
-        return `import ${directory} from './${directory}';`;
-      })
+    fs.writeFileSync(
+      `${dir}/index.ts`,
+      processImports(dir, directories, files)
     );
-
-    imports.push('\nexport {');
-    imports = imports.concat(
-      files.concat(directories).map((impo) => `${path.parse(impo).name},`)
-    );
-    imports.push('};');
-    fs.writeFileSync(`${dir}/index.ts`, imports.join('\n'));
   });
 })();

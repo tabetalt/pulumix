@@ -4,6 +4,10 @@ import * as pulumi from '@pulumi/pulumi';
 export interface MappingSpec {
   namespace?: pulumi.Input<string>;
   /**
+   * Prefix
+   */
+  prefix?: pulumi.Input<string>;
+  /**
    * @example service.v1.api.service.com
    */
   host: pulumi.Input<string>;
@@ -48,6 +52,7 @@ export class Mapping extends k8s.apiextensions.CustomResource {
       cors,
       namespace = 'default',
       host,
+      prefix = '/',
     } = args;
     super(
       name,
@@ -59,7 +64,7 @@ export class Mapping extends k8s.apiextensions.CustomResource {
           namespace,
         },
         spec: {
-          prefix: '/',
+          prefix,
           host: pulumi.output(host).apply((host) => host.replace(/\.$/, '')),
           bypass_auth: bypassAuth,
           grpc,

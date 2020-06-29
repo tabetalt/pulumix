@@ -37,7 +37,7 @@ const resource = new resource('name', {}, {
 
 * [additionalSecretOutputs](customresourceoptionswithconfig.md#optional-additionalsecretoutputs)
 * [aliases](customresourceoptionswithconfig.md#optional-aliases)
-* [config](customresourceoptionswithconfig.md#config)
+* [config](customresourceoptionswithconfig.md#optional-config)
 * [customTimeouts](customresourceoptionswithconfig.md#optional-customtimeouts)
 * [deleteBeforeReplace](customresourceoptionswithconfig.md#optional-deletebeforereplace)
 * [dependsOn](customresourceoptionswithconfig.md#optional-dependson)
@@ -74,9 +74,9 @@ An optional list of aliases to treat this resource as matching.
 
 ___
 
-###  config
+### `Optional` config
 
-• **config**: *[Config](../classes/config.md)*
+• **config**? : *[Config](../classes/config.md)*
 
 ___
 

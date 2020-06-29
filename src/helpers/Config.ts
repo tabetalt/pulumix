@@ -1,33 +1,4 @@
 import * as pulumi from '@pulumi/pulumi';
-
-/**
- * Custom Resource Options with extendable Config
- *
- * This is used to extend configuration.
- * @example
- * ```typescript
- * class CustomConfig {
- *  get(key: string) {
- *    const getConfig = async (key: string) => {
- *      ...some async code
- *      return something
- *    }
- *    return pulumi.output(getConfig(key));
- *  }
- * }
- *
- * const config = new CustomConfig();
- *
- * const resource = new resource('name', {}, {
- *  config,
- * })
- * ```
- */
-export interface CustomResourceOptionsWithConfig
-  extends pulumi.CustomResourceOptions {
-  config: Config;
-}
-
 const pulumiConfig = new pulumi.Config();
 
 /**
@@ -46,6 +17,13 @@ export class Config {
     return pulumi.output(
       (() => {
         return pulumiConfig.get<K>(key);
+      })()
+    );
+  }
+  getProviderArgs<P>(key: string) {
+    return pulumi.output<P>(
+      (() => {
+        return (pulumiConfig.get(`provider-${key}`) as unknown) as P;
       })()
     );
   }
