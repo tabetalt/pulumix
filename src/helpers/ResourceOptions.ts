@@ -29,4 +29,9 @@ export interface CustomResourceOptionsWithConfig
   config?: Config;
 }
 
+export interface ComponentResourceOptionsWithConfig
+  extends pulumi.ComponentResourceOptions {
+  config?: Config;
+}
+
 export const ResourceOptions = {};
