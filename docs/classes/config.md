@@ -21,6 +21,8 @@ config.get('defaultDomain');
 ### Methods
 
 * [get](config.md#get)
+* [getGCPProvider](config.md#getgcpprovider)
+* [getK8SProvider](config.md#getk8sprovider)
 
 ## Methods
 
@@ -39,3 +41,19 @@ Name | Type |
 `key` | string |
 
 **Returns:** *OutputInstance‹undefined› | OutputInstance‹undefined›*
+
+___
+
+###  getGCPProvider
+
+▸ **getGCPProvider**(): *Provider*
+
+**Returns:** *Provider*
+
+___
+
+###  getK8SProvider
+
+▸ **getK8SProvider**(): *Provider*
+
+**Returns:** *Provider*

@@ -53,7 +53,7 @@ const service = new pulumix.apps.Service('account', {
 
 ###  constructor
 
-\+ **new Service**(`name`: string, `args`: [ServiceSpec](../interfaces/servicespec.md), `opts?`: [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)): *[Service](service.md)*
+\+ **new Service**(`name`: string, `args`: [ServiceSpec](../interfaces/servicespec.md), `opts?`: pulumi.CustomResourceOptions, `config?`: [Config](config.md)): *[Service](service.md)*
 
 *Overrides void*
 
@@ -63,7 +63,8 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 `args` | [ServiceSpec](../interfaces/servicespec.md) |
-`opts?` | [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md) |
+`opts?` | pulumi.CustomResourceOptions |
+`config?` | [Config](config.md) |
 
 **Returns:** *[Service](service.md)*
 
@@ -89,7 +90,7 @@ ___
 
 ### `Private` `Optional` `Readonly` opts
 
-• **opts**? : *[CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)*
+• **opts**? : *pulumi.CustomResourceOptions*
 
 ___
 
@@ -103,7 +104,7 @@ ___
 
 • **urn**: *Output‹URN›*
 
-*Inherited from [Mapping](mapping.md).[urn](mapping.md#readonly-urn)*
+*Inherited from [Service](service.md).[urn](service.md#readonly-urn)*
 
 urn is the stable logical URN used to distinctly address a resource, both before and after
 deployments.
@@ -127,7 +128,7 @@ ___
 
 ▸ **getProvider**(`moduleMember`: string): *ProviderResource | undefined*
 
-*Inherited from [Mapping](mapping.md).[getProvider](mapping.md#getprovider)*
+*Inherited from [Service](service.md).[getProvider](service.md#getprovider)*
 
 **Parameters:**
 

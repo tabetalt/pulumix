@@ -23,7 +23,7 @@ export class Config {
       })()
     );
   }
-  
+
   getK8SProvider(): k8s.Provider {
     // Not implemented
     return new k8s.Provider('k8s-provider', {});

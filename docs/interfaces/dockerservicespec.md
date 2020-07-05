@@ -13,7 +13,7 @@
 ### Properties
 
 * [build](dockerservicespec.md#build)
-* [gcrRegion](dockerservicespec.md#optional-gcrregion)
+* [version](dockerservicespec.md#version)
 
 ## Properties
 
@@ -25,9 +25,8 @@ Reference to Dockerfile
 
 ___
 
-### `Optional` gcrRegion
+###  version
 
-• **gcrRegion**? : *undefined | string*
+• **version**: *string*
 
-Google Container Registry Region
-defaults to `eu`
+Version

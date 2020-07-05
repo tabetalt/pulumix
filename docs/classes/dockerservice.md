@@ -8,7 +8,8 @@ Creates a Docker-based service
 ```typescript
 import * as pulumix from '@tabetalt/pulumix';
 const dockerService = new pulumix.apps.DockerService('service', {
- build: '../backend'
+ build: '../backend',
+ version: require('../package.json').version,
 })
 ```
 
@@ -30,6 +31,7 @@ const dockerService = new pulumix.apps.DockerService('service', {
 
 ### Properties
 
+* [args](dockerservice.md#private-args)
 * [image](dockerservice.md#readonly-image)
 * [name](dockerservice.md#private-readonly-name)
 * [opts](dockerservice.md#private-optional-readonly-opts)
@@ -48,7 +50,7 @@ const dockerService = new pulumix.apps.DockerService('service', {
 
 ###  constructor
 
-\+ **new DockerService**(`name`: string, `args`: [DockerServiceSpec](../interfaces/dockerservicespec.md), `opts?`: [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)): *[DockerService](dockerservice.md)*
+\+ **new DockerService**(`name`: string, `args`: [DockerServiceSpec](../interfaces/dockerservicespec.md), `opts?`: pulumi.ComponentResourceOptions, `config?`: [Config](config.md)): *[DockerService](dockerservice.md)*
 
 *Overrides void*
 
@@ -58,11 +60,18 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 `args` | [DockerServiceSpec](../interfaces/dockerservicespec.md) |
-`opts?` | [CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md) |
+`opts?` | pulumi.ComponentResourceOptions |
+`config?` | [Config](config.md) |
 
 **Returns:** *[DockerService](dockerservice.md)*
 
 ## Properties
+
+### `Private` args
+
+• **args**: *[DockerServiceSpec](../interfaces/dockerservicespec.md)*
+
+___
 
 ### `Readonly` image
 
@@ -78,7 +87,7 @@ ___
 
 ### `Private` `Optional` `Readonly` opts
 
-• **opts**? : *[CustomResourceOptionsWithConfig](../interfaces/customresourceoptionswithconfig.md)*
+• **opts**? : *pulumi.ComponentResourceOptions*
 
 ___
 
@@ -92,7 +101,7 @@ ___
 
 • **urn**: *Output‹URN›*
 
-*Inherited from [Mapping](mapping.md).[urn](mapping.md#readonly-urn)*
+*Inherited from [Service](service.md).[urn](service.md#readonly-urn)*
 
 urn is the stable logical URN used to distinctly address a resource, both before and after
 deployments.
@@ -116,7 +125,7 @@ ___
 
 ▸ **getProvider**(`moduleMember`: string): *ProviderResource | undefined*
 
-*Inherited from [Mapping](mapping.md).[getProvider](mapping.md#getprovider)*
+*Inherited from [Service](service.md).[getProvider](service.md#getprovider)*
 
 **Parameters:**
 

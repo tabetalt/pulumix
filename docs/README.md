@@ -13,25 +13,15 @@
 
 ### Interfaces
 
-* [CustomResourceOptionsWithConfig](interfaces/customresourceoptionswithconfig.md)
 * [DockerServiceSpec](interfaces/dockerservicespec.md)
 * [MappingSpec](interfaces/mappingspec.md)
 * [ServiceSpec](interfaces/servicespec.md)
 
 ### Variables
 
-* [ResourceOptions](README.md#const-resourceoptions)
 * [pulumiConfig](README.md#const-pulumiconfig)
 
 ## Variables
-
-### `Const` ResourceOptions
-
-• **ResourceOptions**: *object*
-
-#### Type declaration:
-
-___
 
 ### `Const` pulumiConfig
 

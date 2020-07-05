@@ -52,7 +52,7 @@ export class DockerService extends pulumi.ComponentResource {
     const image = gcp.container.getRegistryImage(
       {
         name,
-        tag: version
+        tag: version,
       },
       {
         parent: this,
