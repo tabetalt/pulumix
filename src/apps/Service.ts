@@ -116,6 +116,8 @@ export class Service extends pulumi.ComponentResource {
         },
       },
       spec: pb.asDeploymentSpec(),
+    }, {
+      parent: this,
     });
 
     this.service = this.deployment.createService({
