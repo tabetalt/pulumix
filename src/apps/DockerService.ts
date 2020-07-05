@@ -44,23 +44,20 @@ export class DockerService extends pulumi.ComponentResource {
     config?: Config
   ) {
     super('apps:docker-service', name, args, opts);
-    const cnf = config || new Config();
 
     const { build, ...serviceArgs } = args;
-
     const clientConfig = gcp.organizations.getClientConfig();
-
     const version = serviceArgs.version;
 
     const image = gcp.container.getRegistryImage(
-          {
-            name,
+      {
+        name,
         tag: version
-          },
-          {
-            parent: this,
-          }
-      );
+      },
+      {
+        parent: this,
+      }
+    );
 
     this.image = new docker.Image(
       `${name}-docker-image`,
@@ -86,7 +83,8 @@ export class DockerService extends pulumi.ComponentResource {
       },
       {
         parent: this,
-      }
+      },
+      config
     );
   }
 }
