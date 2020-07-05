@@ -74,7 +74,7 @@ export class Service extends pulumi.ComponentResource {
     opts?: pulumi.CustomResourceOptions,
     config?: Config
   ) {
-    super('apps:service', name, opts);
+    super('apps:service', name, args, opts);
 
     config = config || new Config();
 
