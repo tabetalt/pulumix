@@ -2,7 +2,7 @@ import * as docker from '@pulumi/docker';
 import * as gcp from '@pulumi/gcp';
 import * as pulumi from '@pulumi/pulumi';
 import { Service, ServiceSpec } from './Service';
-import { CustomResourceOptionsWithConfig } from '../helpers/ResourceOptions';
+import { ComponentResourceOptionsWithConfig } from '../helpers/ResourceOptions';
 
 export interface DockerServiceSpec extends Omit<ServiceSpec, 'image'> {
   /**
@@ -35,7 +35,7 @@ export interface DockerServiceSpec extends Omit<ServiceSpec, 'image'> {
  */
 export class DockerService extends pulumi.ComponentResource {
   private readonly name: string;
-  private readonly opts?: CustomResourceOptionsWithConfig;
+  private readonly opts?: ComponentResourceOptionsWithConfig;
 
   readonly service: Service;
   readonly image: docker.Image;
@@ -43,29 +43,28 @@ export class DockerService extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: DockerServiceSpec,
-    opts?: CustomResourceOptionsWithConfig
+    opts?: Omit<ComponentResourceOptionsWithConfig, "provider">
   ) {
     super('apps:docker-service', name, opts);
 
     const { build, gcrRegion = 'eu', ...serviceArgs } = args;
 
+    const clientConfig = gcp.organizations.getClientConfig();
+
     const image = pulumi.output(
-      gcp.container.getRegistryImage(
+      clientConfig.then(c => gcp.container.getRegistryImage(
         {
           name,
+          project: c.project,
           region: gcrRegion,
         },
         {
+          // ...opts,
           parent: this,
           async: true,
-          ...opts,
         }
       )
-    );
-
-    const clientConfig = gcp.organizations.getClientConfig({
-      provider: opts?.provider,
-    });
+    ));
 
     const version = serviceArgs.version;
 
@@ -81,6 +80,7 @@ export class DockerService extends pulumi.ComponentResource {
         },
       },
       {
+        ...opts,
         parent: this,
       }
     );
@@ -92,8 +92,8 @@ export class DockerService extends pulumi.ComponentResource {
         ...serviceArgs,
       },
       {
-        parent: this,
         ...opts,
+        parent: this,
       }
     );
   }

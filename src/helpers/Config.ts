@@ -1,6 +1,9 @@
 import * as pulumi from '@pulumi/pulumi';
 const pulumiConfig = new pulumi.Config();
 
+import * as k8s from '@pulumi/kubernetes';
+import * as gcp from '@pulumi/gcp';
+
 /**
  * Config Class
  *
@@ -20,11 +23,14 @@ export class Config {
       })()
     );
   }
-  getProviderArgs<P>(key: string) {
-    return pulumi.output<P>(
-      (() => {
-        return (pulumiConfig.get(`provider-${key}`) as unknown) as P;
-      })()
-    );
+  
+  getK8SProvider(): k8s.Provider {
+    // Not implemented
+    return new k8s.Provider('k8s-provider', {});
+  }
+
+  getGCPProvider(): gcp.Provider {
+    // Not implemented
+    return new gcp.Provider('gcp-provider', {});
   }
 }

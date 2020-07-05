@@ -123,7 +123,6 @@ export class Service extends pulumi.ComponentResource {
     });
 
     this.mapping = new Mapping(`${name}-mapping`, mapping, {
-      ...opts,
       parent: this,
     });
 
