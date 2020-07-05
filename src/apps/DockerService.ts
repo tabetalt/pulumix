@@ -52,26 +52,20 @@ export class DockerService extends pulumi.ComponentResource {
 
     const version = serviceArgs.version;
 
-    const image = pulumi
-      .all([cnf.get('gcp:project'), cnf.get('gcp:region'), version])
-      .apply(([project, region, tag]) =>
-        gcp.container.getRegistryImage(
+    const image = gcp.container.getRegistryImage(
           {
             name,
-            project,
-            region,
-            tag,
+        tag: version
           },
           {
             parent: this,
           }
-        )
       );
 
     this.image = new docker.Image(
       `${name}-docker-image`,
       {
-        imageName: image.apply((i) => i.imageUrl),
+        imageName: image.then((i) => i.imageUrl),
         build,
         registry: {
           server: 'eu.gcr.io',
