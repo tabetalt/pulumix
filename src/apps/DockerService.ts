@@ -3,6 +3,7 @@ import * as gcp from '@pulumi/gcp';
 import * as pulumi from '@pulumi/pulumi';
 import { Service, ServiceSpec } from './Service';
 import { ComponentResourceOptionsWithConfig } from '../helpers/ResourceOptions';
+import { Config } from '@pulumi/pulumi';
 
 export interface DockerServiceSpec extends Omit<ServiceSpec, 'image'> {
   /**
@@ -35,7 +36,7 @@ export interface DockerServiceSpec extends Omit<ServiceSpec, 'image'> {
  */
 export class DockerService extends pulumi.ComponentResource {
   private readonly name: string;
-  private readonly opts?: ComponentResourceOptionsWithConfig;
+  private readonly opts?: pulumi.ComponentResourceOptions;
 
   readonly service: Service;
   readonly image: docker.Image;
@@ -43,10 +44,11 @@ export class DockerService extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: DockerServiceSpec,
-    opts?: Omit<ComponentResourceOptionsWithConfig, "provider">
+    opts?: pulumi.ComponentResourceOptions,
   ) {
     super('apps:docker-service', name, opts);
 
+    config = config || new Config();
     const { build, gcrRegion = 'eu', ...serviceArgs } = args;
 
     const clientConfig = gcp.organizations.getClientConfig();

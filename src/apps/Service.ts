@@ -2,7 +2,6 @@ import * as pulumi from '@pulumi/pulumi';
 import * as semver from 'semver';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
-import { CustomResourceOptionsWithConfig } from '../helpers/ResourceOptions';
 import { Config } from '../helpers/Config';
 
 export interface ServiceSpec {
@@ -63,7 +62,7 @@ export interface ServiceSpec {
  */
 export class Service extends pulumi.ComponentResource {
   private readonly name: string;
-  private readonly opts?: CustomResourceOptionsWithConfig;
+  private readonly opts?: pulumi.CustomResourceOptions;
 
   readonly deployment: kx.Deployment;
   readonly service: kx.Service;
@@ -72,11 +71,12 @@ export class Service extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: ServiceSpec,
-    opts?: CustomResourceOptionsWithConfig
+    opts?: pulumi.CustomResourceOptions,
+    config?: Config
   ) {
     super('apps:service', name, opts);
 
-    const config = opts?.config || new Config();
+    config = config || new Config();
 
     const primaryDomain = config
       .get('primaryDomain')
@@ -93,7 +93,9 @@ export class Service extends pulumi.ComponentResource {
         host: domain,
         bypassAuth: false,
         servicePort: port,
-        prefix: pulumi.output(version).apply((ver) => `v${semver.major(ver)}`),
+        prefix: pulumi
+          .output(version)
+          .apply((ver) => (ver == 'dev' ? 'dev' : `v${semver.major(ver)}`)),
       },
     } = args;
 
@@ -109,16 +111,20 @@ export class Service extends pulumi.ComponentResource {
       ],
     });
 
-    this.deployment = new kx.Deployment(`${name}-deployment`, {
-      metadata: {
-        annotations: {
-          'app-version': version,
+    this.deployment = new kx.Deployment(
+      `${name}-deployment`,
+      {
+        metadata: {
+          annotations: {
+            'app-version': version,
+          },
         },
+        spec: pb.asDeploymentSpec(),
       },
-      spec: pb.asDeploymentSpec(),
-    }, {
-      parent: this,
-    });
+      {
+        parent: this,
+      }
+    );
 
     this.service = this.deployment.createService({
       type: kx.types.ServiceType.LoadBalancer,
