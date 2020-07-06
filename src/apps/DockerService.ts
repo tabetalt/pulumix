@@ -46,7 +46,6 @@ export class DockerService extends pulumi.ComponentResource {
     super('apps:docker-service', name, args, opts);
 
     const { build, ...serviceArgs } = args;
-    const clientConfig = gcp.organizations.getClientConfig();
     const version = serviceArgs.version;
 
     const image = gcp.container.getRegistryImage(
@@ -64,11 +63,6 @@ export class DockerService extends pulumi.ComponentResource {
       {
         imageName: image.then((i) => i.imageUrl),
         build,
-        registry: {
-          server: 'eu.gcr.io',
-          username: '_json_key',
-          password: clientConfig.then((conf) => conf.accessToken),
-        },
       },
       {
         parent: this,
