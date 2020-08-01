@@ -5,7 +5,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@tabetalt/pulumix?style=flat-square)
 ![npm](https://img.shields.io/npm/v/@tabetalt/pulumix?style=flat-square)
 
-# Tabetalt Pulumix
+![Tabetalt Pulumix](.github/assets/header.jpg)
 
 Pulumix is a set of template-driven [Pulumi](https://pulumi.com) [resources](src/), used to configure Tabetalts intrastructure as code.
 
