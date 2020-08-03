@@ -29,6 +29,11 @@ export interface GRPCServiceSpec {
   domain?: pulumi.Input<string>;
 
   /**
+   * GCP Service Account Secret Name
+   */
+  GCPServiceAccountSecret?: pulumi.Input<string>;
+
+  /**
    * Docker image name.
    * More info: https://kubernetes.io/docs/concepts/containers/images
    */
@@ -88,19 +93,37 @@ export class GRPCService extends pulumi.ComponentResource {
       version = process.env.VERSION || 'dev',
       namespace,
       env = {},
+      GCPServiceAccountSecret,
       image,
     } = args;
 
-    env.APP_VERSION = version;
+    const container = pulumi
+      .all([GCPServiceAccountSecret, env, ports, image, version])
+      .apply(([secret, env, ports, image, ver]) => {
+        const volumeMounts: kx.types.Container['volumeMounts'] = [];
 
-    const pb = new kx.PodBuilder({
-      containers: [
-        {
+        // GCPServiceAccountSecrets
+        if (secret) {
+          const googleAuthCredsPath = `/var/run/secret/cloud.google.com/${secret}.json`;
+          env.GOOGLE_APPLICATION_CREDENTIALS = googleAuthCredsPath;
+          volumeMounts.push({
+            name: secret,
+            mountPath: googleAuthCredsPath,
+          });
+        }
+
+        env.APP_VERSION = ver;
+
+        return {
           env,
           image,
           ports,
-        },
-      ],
+          volumeMounts,
+        };
+      });
+
+    const pb = new kx.PodBuilder({
+      containers: [container],
     });
 
     this.deployment = new kx.Deployment(
