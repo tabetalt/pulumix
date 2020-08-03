@@ -53,7 +53,7 @@ const service = new pulumix.apps.Service('account', {
 
 ###  constructor
 
-\+ **new GRPCService**(`name`: string, `args`: [GRPCServiceSpec](../interfaces/grpcservicespec.md), `opts?`: pulumi.CustomResourceOptions, `config?`: [Config](config.md)): *[GRPCService](grpcservice.md)*
+\+ **new GRPCService**(`name`: string, `args`: [GRPCServiceSpec](../interfaces/grpcservicespec.md), `opts?`: pulumi.CustomResourceOptions): *[GRPCService](grpcservice.md)*
 
 *Overrides void*
 
@@ -64,7 +64,6 @@ Name | Type |
 `name` | string |
 `args` | [GRPCServiceSpec](../interfaces/grpcservicespec.md) |
 `opts?` | pulumi.CustomResourceOptions |
-`config?` | [Config](config.md) |
 
 **Returns:** *[GRPCService](grpcservice.md)*
 

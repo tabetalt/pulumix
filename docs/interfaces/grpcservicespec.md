@@ -10,6 +10,7 @@
 
 ### Properties
 
+* [GCPServiceAccountSecret](grpcservicespec.md#optional-gcpserviceaccountsecret)
 * [domain](grpcservicespec.md#optional-domain)
 * [env](grpcservicespec.md#optional-env)
 * [image](grpcservicespec.md#image)
@@ -19,6 +20,14 @@
 * [version](grpcservicespec.md#optional-version)
 
 ## Properties
+
+### `Optional` GCPServiceAccountSecret
+
+• **GCPServiceAccountSecret**? : *pulumi.Input‹string›*
+
+GCP Service Account Secret Name
+
+___
 
 ### `Optional` domain
 
