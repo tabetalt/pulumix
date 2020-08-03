@@ -10,11 +10,13 @@
 * [DockerService](classes/dockerservice.md)
 * [Mapping](classes/mapping.md)
 * [Service](classes/service.md)
+* [ServiceSecret](classes/servicesecret.md)
 
 ### Interfaces
 
 * [DockerServiceSpec](interfaces/dockerservicespec.md)
 * [MappingSpec](interfaces/mappingspec.md)
+* [ServiceSecretSpec](interfaces/servicesecretspec.md)
 * [ServiceSpec](interfaces/servicespec.md)
 
 ### Variables
