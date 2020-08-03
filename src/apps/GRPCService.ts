@@ -1,6 +1,4 @@
 import * as pulumi from '@pulumi/pulumi';
-import * as k8s from '@pulumi/kubernetes';
-import * as semver from 'semver';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
 import { Config } from '../helpers/Config';
@@ -81,12 +79,9 @@ export class GRPCService extends pulumi.ComponentResource {
   constructor(
     name: string,
     args: GRPCServiceSpec,
-    opts?: pulumi.CustomResourceOptions,
-    config?: Config
+    opts?: pulumi.CustomResourceOptions
   ) {
     super('apps:grpc-service', name, args, opts);
-
-    config = config || new Config();
 
     const {
       ports,
