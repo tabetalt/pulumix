@@ -98,6 +98,8 @@ export class ServiceSecret extends pulumi.ComponentResource {
       data: {
         'credentials.json': this.key.privateKey,
       },
+    }, {
+      parent: this,
     });
   }
 }
