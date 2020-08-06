@@ -95,7 +95,8 @@ export class ServiceSecret extends pulumi.ComponentResource {
       `${name}-secret`,
       {
         metadata: {
-          name: namespace,
+          name,
+          namespace,
         },
         data: {
           'credentials.json': this.key.privateKey,
