@@ -17,11 +17,11 @@ Pulumix is opinionated and will change based on the needs of Tabetalt. However, 
 ## Quickstart
 
 ```shell
-$> npm install @tabetalt/pulumix
+ $ npm install @tabetalt/pulumix
 ```
 
 ```shell
-$> yarn add @tabetalt/pulumix
+ $ yarn add @tabetalt/pulumix
 ```
 
 ## Documentation
