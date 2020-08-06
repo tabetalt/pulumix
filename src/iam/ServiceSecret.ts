@@ -91,15 +91,19 @@ export class ServiceSecret extends pulumi.ComponentResource {
       )
     );
 
-    this.secret = new k8s.core.v1.Secret(`${name}-secret`, {
-      metadata: {
-        name: namespace,
+    this.secret = new k8s.core.v1.Secret(
+      `${name}-secret`,
+      {
+        metadata: {
+          name: namespace,
+        },
+        data: {
+          'credentials.json': this.key.privateKey,
+        },
       },
-      data: {
-        'credentials.json': this.key.privateKey,
-      },
-    }, {
-      parent: this,
-    });
+      {
+        parent: this,
+      }
+    );
   }
 }
