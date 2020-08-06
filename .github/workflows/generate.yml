@@ -1,11 +1,11 @@
-name: Release
+name: Auto-generate
 on:
   push:
     branches:
       - develop
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
     strategy:
       matrix:
