@@ -10,24 +10,16 @@
 
 ### Properties
 
-* [GCPServiceAccountSecret](grpcservicespec.md#optional-gcpserviceaccountsecret)
 * [domain](grpcservicespec.md#optional-domain)
 * [env](grpcservicespec.md#optional-env)
 * [image](grpcservicespec.md#image)
 * [mapping](grpcservicespec.md#optional-mapping)
 * [namespace](grpcservicespec.md#optional-namespace)
 * [ports](grpcservicespec.md#ports)
+* [serviceSecret](grpcservicespec.md#optional-servicesecret)
 * [version](grpcservicespec.md#optional-version)
 
 ## Properties
-
-### `Optional` GCPServiceAccountSecret
-
-• **GCPServiceAccountSecret**? : *pulumi.Input‹string›*
-
-GCP Service Account Secret Name
-
-___
 
 ### `Optional` domain
 
@@ -81,6 +73,17 @@ ___
 • **ports**: *kx.types.Container["ports"]*
 
 Ports
+
+___
+
+### `Optional` serviceSecret
+
+• **serviceSecret**? : *pulumi.Input‹string›*
+
+GCP Service Account Secret Name
+
+This can be used in combination with iam.ServiceSecret.
+The string is the name of the secret to attach to.
 
 ___
 

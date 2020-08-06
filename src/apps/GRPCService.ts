@@ -28,7 +28,7 @@ export interface GRPCServiceSpec {
 
   /**
    * GCP Service Account Secret Name
-   * 
+   *
    * This can be used in combination with iam.ServiceSecret.
    * The string is the name of the secret to attach to.
    */
