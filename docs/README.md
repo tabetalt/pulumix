@@ -11,12 +11,14 @@
 * [GRPCService](classes/grpcservice.md)
 * [Mapping](classes/mapping.md)
 * [Service](classes/service.md)
+* [ServiceSecret](classes/servicesecret.md)
 
 ### Interfaces
 
 * [DockerServiceSpec](interfaces/dockerservicespec.md)
 * [GRPCServiceSpec](interfaces/grpcservicespec.md)
 * [MappingSpec](interfaces/mappingspec.md)
+* [ServiceSecretSpec](interfaces/servicesecretspec.md)
 * [ServiceSpec](interfaces/servicespec.md)
 
 ### Variables

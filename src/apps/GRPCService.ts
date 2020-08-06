@@ -28,8 +28,11 @@ export interface GRPCServiceSpec {
 
   /**
    * GCP Service Account Secret Name
+   * 
+   * This can be used in combination with iam.ServiceSecret.
+   * The string is the name of the secret to attach to.
    */
-  GCPServiceAccountSecret?: pulumi.Input<string>;
+  serviceSecret?: pulumi.Input<string>;
 
   /**
    * Docker image name.
@@ -88,16 +91,16 @@ export class GRPCService extends pulumi.ComponentResource {
       version = process.env.VERSION || 'dev',
       namespace,
       env = {},
-      GCPServiceAccountSecret,
+      serviceSecret,
       image,
     } = args;
 
     const container = pulumi
-      .all([GCPServiceAccountSecret, env, ports, image, version])
+      .all([serviceSecret, env, ports, image, version])
       .apply(([secret, env, ports, image, ver]) => {
         const volumeMounts: kx.types.Container['volumeMounts'] = [];
 
-        // GCPServiceAccountSecrets
+        // serviceSecrets
         if (secret) {
           const googleAuthCredsPath = `/var/run/secret/cloud.google.com/${secret}.json`;
           env.GOOGLE_APPLICATION_CREDENTIALS = googleAuthCredsPath;
