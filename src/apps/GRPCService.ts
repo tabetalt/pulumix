@@ -57,17 +57,16 @@ export interface GRPCServiceSpec {
 }
 
 /**
- * Apps.Service
+ * Apps.GRPCService
  *
- * Generic service consisting of best practise deployment, service and Ambassador Mapping.
+ * Generic GRPC Service
  *
  * @example
  * ```typescript
  * import * as pulumix from '@tabetalt/pulumix';
  *
- * const service = new pulumix.apps.Service('account', {
+ * const service = new pulumix.apps.GRPCService('account', {
  *  image: 'busybox',
- *  domain: 'busy.example.com',
  * });
  * ```
  */
