@@ -15,6 +15,7 @@
 * [image](servicespec.md#image)
 * [mapping](servicespec.md#optional-mapping)
 * [port](servicespec.md#optional-port)
+* [serviceSecret](servicespec.md#optional-servicesecret)
 * [version](servicespec.md#optional-version)
 
 ## Properties
@@ -64,6 +65,16 @@ ___
 
 Port
 defaults to: 8080
+
+___
+
+### `Optional` serviceSecret
+
+• **serviceSecret**? : *[ServiceSecret](../classes/servicesecret.md)*
+
+GCP Service Account Secret Name
+
+This can be used in combination with iam.ServiceSecret.
 
 ___
 

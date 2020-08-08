@@ -116,7 +116,9 @@ export class Service extends pulumi.ComponentResource {
           env,
           image,
           ports: { http: port },
-          volumeMounts: serviceSecret ? [serviceSecret.secret.mount('/var/run/secret/cloud.google.com/')] : [],
+          volumeMounts: serviceSecret
+            ? [serviceSecret.secret.mount('/var/run/secret/cloud.google.com/')]
+            : [],
         },
       ],
     });

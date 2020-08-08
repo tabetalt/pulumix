@@ -101,9 +101,9 @@ export class GRPCService extends pulumi.ComponentResource {
           env,
           image,
           ports,
-          volumeMounts: serviceSecret && [serviceSecret.secret.mount(
-            '/secrets'
-          )],
+          volumeMounts: serviceSecret && [
+            serviceSecret.secret.mount('/secrets'),
+          ],
         },
       ],
     });
