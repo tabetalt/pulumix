@@ -117,7 +117,7 @@ ___
 
 • **urn**: *Output‹URN›*
 
-*Inherited from [Service](service.md).[urn](service.md#readonly-urn)*
+*Inherited from [ServiceSecret](servicesecret.md).[urn](servicesecret.md#readonly-urn)*
 
 urn is the stable logical URN used to distinctly address a resource, both before and after
 deployments.
@@ -128,7 +128,7 @@ deployments.
 
 ▸ **getData**(): *Promise‹TData›*
 
-*Inherited from [Service](service.md).[getData](service.md#protected-getdata)*
+*Inherited from [ServiceSecret](servicesecret.md).[getData](servicesecret.md#protected-getdata)*
 
 Retrieves the data produces by [initialize].  The data is immediately available in a
 derived class's constructor after the `super(...)` call to `ComponentResource`.
@@ -141,7 +141,7 @@ ___
 
 ▸ **getProvider**(`moduleMember`: string): *ProviderResource | undefined*
 
-*Inherited from [Service](service.md).[getProvider](service.md#getprovider)*
+*Inherited from [ServiceSecret](servicesecret.md).[getProvider](servicesecret.md#getprovider)*
 
 **Parameters:**
 
@@ -157,7 +157,7 @@ ___
 
 ▸ **initialize**(`args`: Inputs): *Promise‹TData›*
 
-*Inherited from [Service](service.md).[initialize](service.md#protected-initialize)*
+*Inherited from [ServiceSecret](servicesecret.md).[initialize](servicesecret.md#protected-initialize)*
 
 Can be overridden by a subclass to asynchronously initialize data for this Component
 automatically when constructed.  The data will be available immediately for subclass
@@ -177,7 +177,7 @@ ___
 
 ▸ **registerOutputs**(`outputs?`: Inputs | Promise‹Inputs› | Output‹Inputs›): *void*
 
-*Inherited from [Service](service.md).[registerOutputs](service.md#protected-registeroutputs)*
+*Inherited from [ServiceSecret](servicesecret.md).[registerOutputs](servicesecret.md#protected-registeroutputs)*
 
 registerOutputs registers synthetic outputs that a component has initialized, usually by
 allocating other child sub-resources and propagating their resulting property values.
@@ -200,7 +200,7 @@ ___
 
 ▸ **isInstance**(`obj`: any): *obj is ComponentResource*
 
-*Inherited from [Service](service.md).[isInstance](service.md#static-isinstance)*
+*Inherited from [ServiceSecret](servicesecret.md).[isInstance](servicesecret.md#static-isinstance)*
 
 *Overrides void*
 

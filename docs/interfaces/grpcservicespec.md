@@ -78,12 +78,11 @@ ___
 
 ### `Optional` serviceSecret
 
-• **serviceSecret**? : *pulumi.Input‹string›*
+• **serviceSecret**? : *[ServiceSecret](../classes/servicesecret.md)*
 
 GCP Service Account Secret Name
 
 This can be used in combination with iam.ServiceSecret.
-The string is the name of the secret to attach to.
 
 ___
 

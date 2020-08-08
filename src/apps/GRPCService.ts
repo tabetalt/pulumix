@@ -1,7 +1,7 @@
 import * as pulumi from '@pulumi/pulumi';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
-import { Config } from '../helpers/Config';
+import { ServiceSecret } from '../iam/ServiceSecret';
 
 export interface GRPCServiceSpec {
   /**
@@ -30,9 +30,8 @@ export interface GRPCServiceSpec {
    * GCP Service Account Secret Name
    *
    * This can be used in combination with iam.ServiceSecret.
-   * The string is the name of the secret to attach to.
    */
-  serviceSecret?: pulumi.Input<string>;
+  serviceSecret?: ServiceSecret;
 
   /**
    * Docker image name.
@@ -94,33 +93,19 @@ export class GRPCService extends pulumi.ComponentResource {
       image,
     } = args;
 
-    const container = pulumi
-      .all([serviceSecret, env, ports, image, version])
-      .apply(([secret, env, ports, image, ver]) => {
-        const volumeMounts: kx.types.Container['volumeMounts'] = [];
+    env.APP_VERSION = version;
 
-        // serviceSecrets
-        if (secret) {
-          const googleAuthCredsPath = `/var/run/secret/cloud.google.com/${secret}.json`;
-          env.GOOGLE_APPLICATION_CREDENTIALS = googleAuthCredsPath;
-          volumeMounts.push({
-            name: secret,
-            mountPath: googleAuthCredsPath,
-          });
-        }
-
-        env.APP_VERSION = ver;
-
-        return {
+    const pb = new kx.PodBuilder({
+      containers: [
+        {
           env,
           image,
           ports,
-          volumeMounts,
-        };
-      });
-
-    const pb = new kx.PodBuilder({
-      containers: [container],
+          volumeMounts: serviceSecret && [
+            serviceSecret.secret.mount('/secrets'),
+          ],
+        },
+      ],
     });
 
     this.deployment = new kx.Deployment(
@@ -141,7 +126,6 @@ export class GRPCService extends pulumi.ComponentResource {
 
     const serviceSpec = this.deployment.spec.template.spec.containers.apply(
       (containers) => {
-        // TODO: handle merging ports from args
         const ports: Record<string, number> = {};
         containers.forEach((container) => {
           if (container.ports) {

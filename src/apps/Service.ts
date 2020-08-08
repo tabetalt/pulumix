@@ -3,6 +3,7 @@ import * as semver from 'semver';
 import * as kx from '@pulumi/kubernetesx';
 import { Mapping, MappingSpec } from '../ambassador/Mapping';
 import { Config } from '../helpers/Config';
+import { ServiceSecret } from '../iam/ServiceSecret';
 
 export interface ServiceSpec {
   /**
@@ -15,6 +16,13 @@ export interface ServiceSpec {
    * default to: process.env.VERSION || dev
    */
   version?: pulumi.Input<string>;
+
+  /**
+   * GCP Service Account Secret Name
+   *
+   * This can be used in combination with iam.ServiceSecret.
+   */
+  serviceSecret?: ServiceSecret;
 
   /**
    * Domain
@@ -88,6 +96,7 @@ export class Service extends pulumi.ComponentResource {
       domain = primaryDomain.apply((domain) => `${name}.${domain}`),
       env = {},
       image,
+      serviceSecret,
       mapping = {
         serviceName: `${name}-service`,
         host: domain,
@@ -107,6 +116,9 @@ export class Service extends pulumi.ComponentResource {
           env,
           image,
           ports: { http: port },
+          volumeMounts: serviceSecret
+            ? [serviceSecret.secret.mount('/var/run/secret/cloud.google.com/')]
+            : [],
         },
       ],
     });
