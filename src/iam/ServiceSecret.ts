@@ -1,6 +1,6 @@
-import * as k8s from '@pulumi/kubernetes';
 import * as gcp from '@pulumi/gcp';
 import * as pulumi from '@pulumi/pulumi';
+import * as kx from '@pulumi/kubernetesx';
 import { Config } from '../helpers/Config';
 
 export interface ServiceSecretSpec {
@@ -49,7 +49,7 @@ export class ServiceSecret extends pulumi.ComponentResource {
   readonly account: gcp.serviceAccount.Account;
   readonly members: pulumi.Output<gcp.projects.IAMMember[]>;
   readonly key: gcp.serviceAccount.Key;
-  readonly secret: k8s.core.v1.Secret;
+  readonly secret: kx.Secret;
 
   constructor(
     name: string,
@@ -91,7 +91,7 @@ export class ServiceSecret extends pulumi.ComponentResource {
       )
     );
 
-    this.secret = new k8s.core.v1.Secret(
+    this.secret = new kx.Secret(
       `${name}-secret`,
       {
         metadata: {
