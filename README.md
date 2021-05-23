@@ -2,7 +2,7 @@
 
 Pulumix is a set of template-driven [Pulumi](https://pulumi.com) [resources](src/), used to configure Tabetalts intrastructure as code.
 
-**This is the next major version; it's currently not released and will be available for all Pulumi-supported languages (Node.js (JavaScript/TypeScript), Python, Go, DotNet).
+**This branch is for the next major version; it's currently not released and will be available for all Pulumi-supported languages (Node.js (JavaScript/TypeScript), Python, Go, DotNet).**
 
 ## TODO
 
