@@ -1,0 +1,53 @@
+{
+    "name": "pulumix",
+    "resources": {
+        "pulumix:index:ServiceAccount": {
+            "isComponent": true,
+            "inputProperties": {
+                "indexContent": {
+                    "type": "string",
+                    "description": "The HTML content for index.html."
+                }
+            },
+            "requiredInputs": [
+                "indexContent"
+            ],
+            "properties": {
+                "bucket": {
+                    "$ref": "/google-native/schema.json#/resources/google-native:iam%2Fv1:ServiceAccount",
+                    "description": "The bucket resource."
+                }
+            },
+            "required": [
+                "bucket",
+                "websiteUrl"
+            ]
+        }
+    },
+    "language": {
+        "csharp": {
+            "packageReferences": {
+                "Pulumi": "3.*",
+                "Pulumi.GoogleNative": "4.*"
+            }
+        },
+        "go": {
+            "generateResourceContainerTypes": true,
+            "importBasePath": "github.com/tabetalt/pulumix/sdk/go/pulumix"
+        },
+        "nodejs": {
+            "dependencies": {
+                "@pulumi/google-native": "0.2.0"
+            },
+            "devDependencies": {
+                "typescript": "^3.7.0"
+            }
+        },
+        "python": {
+            "requires": {
+                "pulumi": ">=3.0.0,<4.0.0",
+                "pulumi-aws": "=0.2.0"
+            }
+        }
+    }
+}
