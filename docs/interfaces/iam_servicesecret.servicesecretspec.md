@@ -23,7 +23,7 @@ account email address and a stable unique id. It is unique within a project,
 must be 6-30 characters long, and match the regular expression `a-z`
 to comply with RFC1035. Changing this forces a new service account to be created.
 
-Defined in: [src/iam/ServiceSecret.ts:13](https://github.com/tabetalt/pulumix/blob/c3434ad/src/iam/ServiceSecret.ts#L13)
+Defined in: [src/iam/ServiceSecret.ts:13](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/iam/ServiceSecret.ts#L13)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • `Optional` **namespace**: *Input*<string\>
 
-Defined in: [src/iam/ServiceSecret.ts:20](https://github.com/tabetalt/pulumix/blob/c3434ad/src/iam/ServiceSecret.ts#L20)
+Defined in: [src/iam/ServiceSecret.ts:20](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/iam/ServiceSecret.ts#L20)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 The role that should be applied. Note that custom roles must be of the format
 `[projects|organizations]/{parent-name}/roles/{role-name}`.
 
-Defined in: [src/iam/ServiceSecret.ts:18](https://github.com/tabetalt/pulumix/blob/c3434ad/src/iam/ServiceSecret.ts#L18)
+Defined in: [src/iam/ServiceSecret.ts:18](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/iam/ServiceSecret.ts#L18)

@@ -2,14 +2,14 @@ name: Auto-generate
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -38,5 +38,5 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        branch: develop
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        github_token: ${{ secrets.PAYTRON_GITHUB_TOKEN }}

@@ -66,7 +66,7 @@ const service = new pulumix.apps.Service('account', {
 
 Overrides: pulumi.ComponentResource.constructor
 
-Defined in: [src/apps/Service.ts:77](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L77)
+Defined in: [src/apps/Service.ts:77](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L77)
 
 ## Properties
 
@@ -74,7 +74,7 @@ Defined in: [src/apps/Service.ts:77](https://github.com/tabetalt/pulumix/blob/c3
 
 • `Readonly` **deployment**: *Deployment*
 
-Defined in: [src/apps/Service.ts:75](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L75)
+Defined in: [src/apps/Service.ts:75](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L75)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • `Readonly` **mapping**: [*Mapping*](ambassador_mapping.mapping.md)
 
-Defined in: [src/apps/Service.ts:77](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L77)
+Defined in: [src/apps/Service.ts:77](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L77)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • `Private` `Readonly` **name**: *string*
 
-Defined in: [src/apps/Service.ts:72](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L72)
+Defined in: [src/apps/Service.ts:72](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L72)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • `Private` `Optional` `Readonly` **opts**: CustomResourceOptions
 
-Defined in: [src/apps/Service.ts:73](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L73)
+Defined in: [src/apps/Service.ts:73](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L73)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • `Readonly` **service**: *Service*
 
-Defined in: [src/apps/Service.ts:76](https://github.com/tabetalt/pulumix/blob/c3434ad/src/apps/Service.ts#L76)
+Defined in: [src/apps/Service.ts:76](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/Service.ts#L76)
 
 ___
 
