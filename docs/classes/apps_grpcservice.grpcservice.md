@@ -64,7 +64,7 @@ const service = new pulumix.apps.GRPCService('account', {
 
 Overrides: pulumi.ComponentResource.constructor
 
-Defined in: [src/apps/GRPCService.ts:78](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L78)
+Defined in: [src/apps/GRPCService.ts:78](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L78)
 
 ## Properties
 
@@ -72,7 +72,7 @@ Defined in: [src/apps/GRPCService.ts:78](https://github.com/tabetalt/pulumix/blo
 
 • `Readonly` **deployment**: *Deployment*
 
-Defined in: [src/apps/GRPCService.ts:76](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L76)
+Defined in: [src/apps/GRPCService.ts:76](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L76)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • `Readonly` **mapping**: [*Mapping*](ambassador_mapping.mapping.md)
 
-Defined in: [src/apps/GRPCService.ts:78](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L78)
+Defined in: [src/apps/GRPCService.ts:78](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L78)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • `Private` `Readonly` **name**: *string*
 
-Defined in: [src/apps/GRPCService.ts:73](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L73)
+Defined in: [src/apps/GRPCService.ts:73](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L73)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • `Private` `Optional` `Readonly` **opts**: CustomResourceOptions
 
-Defined in: [src/apps/GRPCService.ts:74](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L74)
+Defined in: [src/apps/GRPCService.ts:74](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L74)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • `Readonly` **service**: *Service*
 
-Defined in: [src/apps/GRPCService.ts:77](https://github.com/tabetalt/pulumix/blob/7c7cd7b/src/apps/GRPCService.ts#L77)
+Defined in: [src/apps/GRPCService.ts:77](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L77)
 
 ___
 
