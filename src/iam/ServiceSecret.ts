@@ -46,9 +46,9 @@ export class ServiceSecret extends pulumi.ComponentResource {
   private readonly name: string;
   private readonly opts?: pulumi.ComponentResourceOptions;
 
-  readonly account: gcp.serviceAccount.Account;
+  readonly account: gcp.serviceaccount.Account;
   readonly members: pulumi.Output<gcp.projects.IAMMember[]>;
-  readonly key: gcp.serviceAccount.Key;
+  readonly key: gcp.serviceaccount.Key;
   readonly secret: kx.Secret;
 
   constructor(
@@ -61,7 +61,7 @@ export class ServiceSecret extends pulumi.ComponentResource {
 
     const { accountId, roles, namespace } = args;
 
-    this.account = new gcp.serviceAccount.Account(
+    this.account = new gcp.serviceaccount.Account(
       `${name}-service`,
       {
         accountId,
@@ -69,7 +69,7 @@ export class ServiceSecret extends pulumi.ComponentResource {
       { parent: this }
     );
 
-    this.key = new gcp.serviceAccount.Key(
+    this.key = new gcp.serviceaccount.Key(
       `${name}-key`,
       {
         serviceAccountId: this.account.accountId,

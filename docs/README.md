@@ -1,32 +1,19 @@
-[@tabetalt/pulumix](README.md)
+@tabetalt/pulumix
 
 # @tabetalt/pulumix
 
-## Index
+## Table of contents
 
-### Classes
+### Modules
 
-* [Config](classes/config.md)
-* [DockerService](classes/dockerservice.md)
-* [GRPCService](classes/grpcservice.md)
-* [Mapping](classes/mapping.md)
-* [Service](classes/service.md)
-* [ServiceSecret](classes/servicesecret.md)
-
-### Interfaces
-
-* [DockerServiceSpec](interfaces/dockerservicespec.md)
-* [GRPCServiceSpec](interfaces/grpcservicespec.md)
-* [MappingSpec](interfaces/mappingspec.md)
-* [ServiceSecretSpec](interfaces/servicesecretspec.md)
-* [ServiceSpec](interfaces/servicespec.md)
-
-### Variables
-
-* [pulumiConfig](README.md#const-pulumiconfig)
-
-## Variables
-
-### `Const` pulumiConfig
-
-• **pulumiConfig**: *Config‹›* = new pulumi.Config()
+- [ambassador](modules/ambassador.md)
+- [ambassador/Mapping](modules/ambassador_mapping.md)
+- [apps](modules/apps.md)
+- [apps/DockerService](modules/apps_dockerservice.md)
+- [apps/GRPCService](modules/apps_grpcservice.md)
+- [apps/Service](modules/apps_service.md)
+- [helpers](modules/helpers.md)
+- [helpers/Config](modules/helpers_config.md)
+- [iam](modules/iam.md)
+- [iam/ServiceSecret](modules/iam_servicesecret.md)
+- [index](modules/index.md)
