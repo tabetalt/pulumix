@@ -73,7 +73,7 @@ const firebaseServiceSecret = new pulumix.iam.ServiceSecret('firebase', {
 
 Overrides: pulumi.ComponentResource.constructor
 
-Defined in: [src/iam/ServiceSecret.ts:52](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L52)
+Defined in: [src/iam/ServiceSecret.ts:52](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L52)
 
 ## Properties
 
@@ -81,7 +81,7 @@ Defined in: [src/iam/ServiceSecret.ts:52](https://github.com/tabetalt/pulumix/bl
 
 • `Readonly` **account**: *Account*
 
-Defined in: [src/iam/ServiceSecret.ts:49](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L49)
+Defined in: [src/iam/ServiceSecret.ts:49](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L49)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • `Readonly` **key**: *Key*
 
-Defined in: [src/iam/ServiceSecret.ts:51](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L51)
+Defined in: [src/iam/ServiceSecret.ts:51](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L51)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • `Readonly` **members**: *Output*<IAMMember[]\>
 
-Defined in: [src/iam/ServiceSecret.ts:50](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L50)
+Defined in: [src/iam/ServiceSecret.ts:50](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L50)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • `Private` `Readonly` **name**: *string*
 
-Defined in: [src/iam/ServiceSecret.ts:46](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L46)
+Defined in: [src/iam/ServiceSecret.ts:46](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L46)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • `Private` `Optional` `Readonly` **opts**: ComponentResourceOptions
 
-Defined in: [src/iam/ServiceSecret.ts:47](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L47)
+Defined in: [src/iam/ServiceSecret.ts:47](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L47)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • `Readonly` **secret**: *Secret*
 
-Defined in: [src/iam/ServiceSecret.ts:52](https://github.com/tabetalt/pulumix/blob/eff771b/src/iam/ServiceSecret.ts#L52)
+Defined in: [src/iam/ServiceSecret.ts:52](https://github.com/tabetalt/pulumix/blob/4049994/src/iam/ServiceSecret.ts#L52)
 
 ___
 

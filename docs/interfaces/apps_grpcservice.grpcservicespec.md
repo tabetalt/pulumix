@@ -26,7 +26,7 @@
 Domain
 defaults to: <name>.<mayor-version>.<default-domain>
 
-Defined in: [src/apps/GRPCService.ts:27](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L27)
+Defined in: [src/apps/GRPCService.ts:27](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L27)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Environment variables
 
-Defined in: [src/apps/GRPCService.ts:10](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L10)
+Defined in: [src/apps/GRPCService.ts:10](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L10)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 Docker image name.
 More info: https://kubernetes.io/docs/concepts/containers/images
 
-Defined in: [src/apps/GRPCService.ts:40](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L40)
+Defined in: [src/apps/GRPCService.ts:40](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L40)
 
 ___
 
@@ -62,7 +62,7 @@ defaults to:
  - bypassAuth: false
  - servicePort: <port>
 
-Defined in: [src/apps/GRPCService.ts:55](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L55)
+Defined in: [src/apps/GRPCService.ts:55](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L55)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 Namespace
 
-Defined in: [src/apps/GRPCService.ts:15](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L15)
+Defined in: [src/apps/GRPCService.ts:15](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L15)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 Ports
 
-Defined in: [src/apps/GRPCService.ts:45](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L45)
+Defined in: [src/apps/GRPCService.ts:45](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L45)
 
 ___
 
@@ -94,7 +94,7 @@ GCP Service Account Secret Name
 
 This can be used in combination with iam.ServiceSecret.
 
-Defined in: [src/apps/GRPCService.ts:34](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L34)
+Defined in: [src/apps/GRPCService.ts:34](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L34)
 
 ___
 
@@ -105,4 +105,4 @@ ___
 Version
 default to: process.env.VERSION || dev
 
-Defined in: [src/apps/GRPCService.ts:21](https://github.com/tabetalt/pulumix/blob/eff771b/src/apps/GRPCService.ts#L21)
+Defined in: [src/apps/GRPCService.ts:21](https://github.com/tabetalt/pulumix/blob/4049994/src/apps/GRPCService.ts#L21)
