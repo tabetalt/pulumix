@@ -18,8 +18,7 @@
     "build": "tsc",
     "generate-barrels": "node scripts/barrels.js; prettier --write src/",
     "generate-docs": "typedoc --readme none --out docs src",
-    "generate": "yarn generate-barrels; yarn generate-docs;",
-    "postinstall": "husky install .github/husky"
+    "generate": "yarn generate-barrels; yarn generate-docs;"
   },
   "files": [
     "dist/*"
