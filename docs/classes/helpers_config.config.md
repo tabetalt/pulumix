@@ -54,7 +54,7 @@ config.get('defaultDomain');
 
 **Returns:** *Output*<undefined \| Unwrap<K\>\>
 
-Defined in: [src/helpers/Config.ts:19](https://github.com/tabetalt/pulumix/blob/eff771b/src/helpers/Config.ts#L19)
+Defined in: [src/helpers/Config.ts:19](https://github.com/tabetalt/pulumix/blob/015837c/src/helpers/Config.ts#L19)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 **Returns:** *Provider*
 
-Defined in: [src/helpers/Config.ts:32](https://github.com/tabetalt/pulumix/blob/eff771b/src/helpers/Config.ts#L32)
+Defined in: [src/helpers/Config.ts:32](https://github.com/tabetalt/pulumix/blob/015837c/src/helpers/Config.ts#L32)
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 **Returns:** *Provider*
 
-Defined in: [src/helpers/Config.ts:27](https://github.com/tabetalt/pulumix/blob/eff771b/src/helpers/Config.ts#L27)
+Defined in: [src/helpers/Config.ts:27](https://github.com/tabetalt/pulumix/blob/015837c/src/helpers/Config.ts#L27)
