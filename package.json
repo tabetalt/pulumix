@@ -3,7 +3,7 @@
   "main": "dist/index.js",
   "description": "Pulumix is a set of template-driven Pulumi resources, used to configure Tabetalts intrastructure as code.",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "keywords": [
     "pulumi",

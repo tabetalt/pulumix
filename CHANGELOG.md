@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://www.github.com/tabetalt/pulumix/compare/v2.0.0...v2.0.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* Remove husky postinstall script ([015837c](https://www.github.com/tabetalt/pulumix/commit/015837cc7aa84969eb2b301af2de93d589e59a21))
+
 ## [2.0.0](https://www.github.com/tabetalt/pulumix/compare/v1.0.2...v2.0.0) (2021-05-24)
 
 
