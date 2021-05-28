@@ -49,7 +49,7 @@
 
 Overrides: k8s.apiextensions.CustomResource.constructor
 
-Defined in: [src/ambassador/Mapping.ts:41](https://github.com/tabetalt/pulumix/blob/015837c/src/ambassador/Mapping.ts#L41)
+Defined in: [src/ambassador/Mapping.ts:41](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L41)
 
 ## Properties
 
