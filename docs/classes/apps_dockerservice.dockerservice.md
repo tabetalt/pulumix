@@ -63,7 +63,7 @@ const dockerService = new pulumix.apps.DockerService('service', {
 
 Overrides: pulumi.ComponentResource.constructor
 
-Defined in: [src/apps/DockerService.ts:38](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L38)
+Defined in: [src/apps/DockerService.ts:38](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L38)
 
 ## Properties
 
@@ -71,7 +71,7 @@ Defined in: [src/apps/DockerService.ts:38](https://github.com/tabetalt/pulumix/b
 
 • `Private` **args**: [*DockerServiceSpec*](../interfaces/apps_dockerservice.dockerservicespec.md)
 
-Defined in: [src/apps/DockerService.ts:38](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L38)
+Defined in: [src/apps/DockerService.ts:38](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L38)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • `Readonly` **image**: *Image*
 
-Defined in: [src/apps/DockerService.ts:36](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L36)
+Defined in: [src/apps/DockerService.ts:36](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L36)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • `Private` `Readonly` **name**: *string*
 
-Defined in: [src/apps/DockerService.ts:32](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L32)
+Defined in: [src/apps/DockerService.ts:32](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L32)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • `Private` `Optional` `Readonly` **opts**: ComponentResourceOptions
 
-Defined in: [src/apps/DockerService.ts:33](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L33)
+Defined in: [src/apps/DockerService.ts:33](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L33)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • `Readonly` **service**: [*Service*](apps_service.service.md)
 
-Defined in: [src/apps/DockerService.ts:35](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L35)
+Defined in: [src/apps/DockerService.ts:35](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L35)
 
 ___
 

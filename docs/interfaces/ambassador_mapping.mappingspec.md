@@ -30,7 +30,7 @@
 
 Should we bypass authentication?
 
-Defined in: [src/ambassador/Mapping.ts:17](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L17)
+Defined in: [src/ambassador/Mapping.ts:17](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L17)
 
 ___
 
@@ -49,7 +49,7 @@ Enables Cross-Origin Resource Sharing (CORS) setting on a mapping
 | `methods?` | *Input*<string[]\> |
 | `origins?` | *Input*<string[]\> |
 
-Defined in: [src/ambassador/Mapping.ts:25](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L25)
+Defined in: [src/ambassador/Mapping.ts:25](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L25)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 If true, tells the system that the service will be handling gRPC calls.
 
-Defined in: [src/ambassador/Mapping.ts:21](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L21)
+Defined in: [src/ambassador/Mapping.ts:21](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L21)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 **`example`** service.v1.api.service.com
 
-Defined in: [src/ambassador/Mapping.ts:13](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L13)
+Defined in: [src/ambassador/Mapping.ts:13](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L13)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **namespace**: *Input*<string\>
 
-Defined in: [src/ambassador/Mapping.ts:5](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L5)
+Defined in: [src/ambassador/Mapping.ts:5](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L5)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **opts**: ComponentResourceOptions
 
-Defined in: [src/ambassador/Mapping.ts:37](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L37)
+Defined in: [src/ambassador/Mapping.ts:37](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L37)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 Prefix
 
-Defined in: [src/ambassador/Mapping.ts:9](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L9)
+Defined in: [src/ambassador/Mapping.ts:9](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L9)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **serviceName**: *Input*<string\>
 
-Defined in: [src/ambassador/Mapping.ts:31](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L31)
+Defined in: [src/ambassador/Mapping.ts:31](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L31)
 
 ___
 
@@ -114,4 +114,4 @@ ___
 Service Port
 Defaults to 8080
 
-Defined in: [src/ambassador/Mapping.ts:36](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/ambassador/Mapping.ts#L36)
+Defined in: [src/ambassador/Mapping.ts:36](https://github.com/tabetalt/pulumix/blob/3f491a9/src/ambassador/Mapping.ts#L36)

@@ -25,7 +25,7 @@
 Domain
 defaults to: <name>.<mayor-version>.<default-domain>
 
-Defined in: [src/apps/Service.ts:31](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L31)
+Defined in: [src/apps/Service.ts:31](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L31)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Environment variables
 
-Defined in: [src/apps/Service.ts:12](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L12)
+Defined in: [src/apps/Service.ts:12](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L12)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 Docker image name.
 More info: https://kubernetes.io/docs/concepts/containers/images
 
-Defined in: [src/apps/Service.ts:37](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L37)
+Defined in: [src/apps/Service.ts:37](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L37)
 
 ___
 
@@ -61,7 +61,7 @@ defaults to:
  - bypassAuth: false
  - servicePort: <port>
 
-Defined in: [src/apps/Service.ts:53](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L53)
+Defined in: [src/apps/Service.ts:53](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L53)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 Port
 defaults to: 8080
 
-Defined in: [src/apps/Service.ts:43](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L43)
+Defined in: [src/apps/Service.ts:43](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L43)
 
 ___
 
@@ -84,7 +84,7 @@ GCP Service Account Secret Name
 
 This can be used in combination with iam.ServiceSecret.
 
-Defined in: [src/apps/Service.ts:25](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L25)
+Defined in: [src/apps/Service.ts:25](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L25)
 
 ___
 
@@ -95,4 +95,4 @@ ___
 Version
 default to: process.env.VERSION || dev
 
-Defined in: [src/apps/Service.ts:18](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L18)
+Defined in: [src/apps/Service.ts:18](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L18)

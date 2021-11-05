@@ -30,7 +30,7 @@
 
 Reference to Dockerfile
 
-Defined in: [src/apps/DockerService.ts:11](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L11)
+Defined in: [src/apps/DockerService.ts:11](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L11)
 
 ___
 
@@ -43,7 +43,7 @@ defaults to: <name>.<mayor-version>.<default-domain>
 
 Inherited from: Omit.domain
 
-Defined in: [src/apps/Service.ts:31](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L31)
+Defined in: [src/apps/Service.ts:31](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L31)
 
 ___
 
@@ -55,7 +55,7 @@ Environment variables
 
 Inherited from: Omit.env
 
-Defined in: [src/apps/Service.ts:12](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L12)
+Defined in: [src/apps/Service.ts:12](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L12)
 
 ___
 
@@ -72,7 +72,7 @@ defaults to:
 
 Inherited from: Omit.mapping
 
-Defined in: [src/apps/Service.ts:53](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L53)
+Defined in: [src/apps/Service.ts:53](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L53)
 
 ___
 
@@ -85,7 +85,7 @@ defaults to: 8080
 
 Inherited from: Omit.port
 
-Defined in: [src/apps/Service.ts:43](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L43)
+Defined in: [src/apps/Service.ts:43](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L43)
 
 ___
 
@@ -99,7 +99,7 @@ This can be used in combination with iam.ServiceSecret.
 
 Inherited from: Omit.serviceSecret
 
-Defined in: [src/apps/Service.ts:25](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/Service.ts#L25)
+Defined in: [src/apps/Service.ts:25](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/Service.ts#L25)
 
 ___
 
@@ -111,4 +111,4 @@ Version
 
 Overrides: Omit.version
 
-Defined in: [src/apps/DockerService.ts:15](https://github.com/tabetalt/pulumix/blob/cd7fa3b/src/apps/DockerService.ts#L15)
+Defined in: [src/apps/DockerService.ts:15](https://github.com/tabetalt/pulumix/blob/3f491a9/src/apps/DockerService.ts#L15)
