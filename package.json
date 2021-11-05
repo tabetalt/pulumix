@@ -1,35 +1,25 @@
 {
   "name": "@tabetalt/pulumix",
-  "main": "dist/index.js",
-  "description": "Pulumix is a set of template-driven Pulumi resources, used to configure Tabetalts intrastructure as code.",
-  "license": "MIT",
   "version": "2.0.1",
   "private": false,
+  "description": "Pulumix is a set of template-driven Pulumi resources, used to configure Tabetalts intrastructure as code.",
   "keywords": [
     "pulumi",
     "templates",
     "infrastructure",
     "infrastructure as code"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "repository": "github:tabetalt/pulumix",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "tsc",
     "generate-barrels": "node scripts/barrels.js; prettier --write src/",
     "generate-docs": "typedoc --readme none --out docs src",
     "generate": "yarn generate-barrels; yarn generate-docs;"
-  },
-  "files": [
-    "dist/*"
-  ],
-  "devDependencies": {
-    "@types/semver": "^7.3.6",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.0",
-    "typedoc": "^0.20.36",
-    "typedoc-plugin-markdown": "^3.8.1",
-    "typescript": "^4.2.4"
   },
   "dependencies": {
     "@pulumi/docker": "^3.0.0",
@@ -40,5 +30,16 @@
     "@pulumi/random": "^4.1.1",
     "@pulumi/vault": "^4.1.0",
     "semver": "^7.3.5"
+  },
+  "devDependencies": {
+    "@types/semver": "^7.3.6",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "typedoc": "^0.20.36",
+    "typedoc-plugin-markdown": "^3.8.1",
+    "typescript": "^4.2.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
